@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "pM4rUs+p/9rj4QbMAPTdNUsXtO4Jk6+0avRzAo7Qaw8=",
+  "Source": "core7-identity-jwt-basic-auth",
+  "BasePath": "_content/core7-identity-jwt-basic-auth",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
