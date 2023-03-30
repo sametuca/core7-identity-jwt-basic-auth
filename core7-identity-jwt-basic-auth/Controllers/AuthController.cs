@@ -37,7 +37,7 @@ public class AuthController : ControllerBase
             Email = model.Email,
         };
 
-        var result = await _userManager.CreateAsync(user, model.Pasword);
+        var result = await _userManager.CreateAsync(user, model.Password);
         if (!result.Succeeded)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation error" });
@@ -55,8 +55,7 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
         var user = await _userManager.FindByNameAsync(model.UserName);
-        if (user == null || !await _userManager.CheckPasswordAsync(user, model.Pasword)) return Unauthorized();
-        if (user.UserName == null) return Unauthorized();
+        //if (user?.UserName == null || !await _userManager.CheckPasswordAsync(user, model.Pasword)) return Unauthorized();
         
         var userRoles = await _userManager.GetRolesAsync(user);
         
